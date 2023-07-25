@@ -10,6 +10,7 @@ ANTIBONUS: float = 0.8
 
 
 def add_rep(current_rep: float, rep_points: int, buf_effect: bool) -> float:
+    """Add rep"""
     current_rep += rep_points
     if buf_effect:
         return current_rep * BONUS
@@ -18,6 +19,7 @@ def add_rep(current_rep: float, rep_points: int, buf_effect: bool) -> float:
 
 def remove_rep(current_rep: float,
                rep_points: int, debuf_effect: bool) -> float:
+    """Remove_rep"""
     current_rep -= rep_points
     if debuf_effect:
         return current_rep * ANTIBONUS
@@ -25,6 +27,7 @@ def remove_rep(current_rep: float,
 
 
 def main(duel_res):
+    """ Its main"""
     current_rep = 0.0
     for rep, result, effect in duel_res:
         if result == 'success':
@@ -50,6 +53,7 @@ ANTIBONUS: float = 0.8
 
 
 def main(duel_res: list):
+    """Its 2 main"""
     current_rep = 0.0
     for rep, result, effect in duel_res:
         if result == 'success':
