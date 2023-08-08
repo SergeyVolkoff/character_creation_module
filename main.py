@@ -1,27 +1,27 @@
 # Импортируем функцию стандартного модуля random.
 from random import randint
-
+DEFAULT_ATTACK = 5
+DEFAULT_DEFENCE = 10
+DEFAULT_STAMINA = 80
 class Character:
     # Константа для диапазона очков урона.
     BRIEF_DESC_CHAR_CLASS = 'отважный любитель приключений'
     RANGE_VALUE_ATTACK = (1,3)
-    DEFAULT_ATTACK = 5
-    DEFAULT_DEFENCE = 10
     RANGE_VALUE_DEFENCE = (1,5)
     SPECIAL_SKILL = "Удача"
     SPECIAL_BUFF = 15
-    DEFAULT_STAMINA = 80
+
     def __init__(self,name):
         self.name = name
 
     def attack(self):
         # Вместо диапазона записана переменная класса.
         # Оператор * распаковывает передаваемый кортеж.
-        value_attack = self.DEFAULT_ATTACK + randint(*self.RANGE_VALUE_ATTACK)
+        value_attack = DEFAULT_ATTACK + randint(*self.RANGE_VALUE_ATTACK)
         return (f'{self.name} нанёс противнику урон, равный {value_attack}')
 
     def defence(self):
-        value_defence = self.DEFAULT_DEFENCE + randint(*self.RANGE_VALUE_DEFENCE)
+        value_defence = DEFAULT_DEFENCE + randint(*self.RANGE_VALUE_DEFENCE)
         return (f'{self.name} блокировал {value_defence} ед. урона.')
 
     def special(self):
